@@ -1,0 +1,73 @@
+{% extends 'Base/base.html' %}
+{% block header %}
+{% block navbar %}
+    <div class="bs-docs-section clearfix">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bs-component">
+                 <nav class="navbar navbar-default">
+                     <div class="container-fluid">
+                        <div class="navbar-header">
+                          <a class="navbar-brand" href="#">Repuestos y Accesorios Flores</a>
+                        </div>
+                       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                         <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Clientes<span class="caret"></span></a>
+                              <ul class="dropdown-menu" role="menu">
+                               <li><a href="#">Sobre Nosotros</a></li>
+                               <li><a href="{#}">Historia</a></li>
+                              </ul>
+                            </li>
+                             <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Trabajadores<span class="caret"></span></a>
+                              <ul class="dropdown-menu" role="menu">
+                                 <li><a href="{#}">Catálogo</a></li>
+                                 <li><a href="{#}">Agenda tu cita</a></li>
+                              </ul>
+                             </li>
+                             <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ventas<span class="caret"></span></a>
+                              <ul class="dropdown-menu" role="menu">
+                                 <li><a href="{#}">Catálogo</a></li>
+                                 <li><a href="{#}">Agenda tu cita</a></li>
+                              </ul>
+                             </li>
+                             <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Bodega<span class="caret"></span></a>
+                              <ul class="dropdown-menu" role="menu">
+                                 <li><a href="{#}">Catálogo</a></li>
+                                 <li><a href="{#}">Agenda tu cita</a></li>
+                              </ul>
+                             </li>
+                             
+                         </ul>
+                         <ul class="nav navbar-nav navbar-right">
+                             <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ request.user }}<span class="caret"></span></a>
+                              
+                              <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Ajustes de Cuenta</a></li>
+                                 <li><a href="{% url 'Logout' %}">Cerrar Sesión</a></li>
+                              </ul>
+                            </li>
+                         </ul>
+        
+
+                        </div>
+                    </div>
+                </nav>
+            </div>
+              </div>
+          </div>
+      </div>
+      <div class="b-example-divider"></div>
+{% endblock %}
+{% endblock %}
+
+{% block content %}
+{%include 'Usuarios/status.html' %}
+
+Acaaaaaaa estan los contadores
+
+{% endblock %}

@@ -1,0 +1,115 @@
+
+{% extends 'Base/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block header %}
+{% block navbar %}
+<style>
+  .table-bordered {
+    background-color: #fff;
+  }
+</style>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}">Repuestos y Accesorios Flores</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Bodega
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a href="{% url 'addrepuesto' %}">Ingresar nuevo Repuesto</a></li>
+              <li><a href="{% url 'listarepuestos' %}">Lista de Repuestos</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <ul class="navbar-nav navbar-right">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ request.user }}</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a href="#">Ajustes de Cuenta</a></li>
+            <li><a href="{% url 'Logout' %}">Cerrar Sesión</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+      <div class="b-example-divider"></div>
+{% endblock %}
+{% endblock %}
+{% block content %}
+<div class="col">
+    <div class="card card-body">
+
+        <form method="get">
+            {{myFilter.form}}
+
+            <button class="btn btn-primary" type="submit">Buscar</button>
+        </form>
+        
+
+    </div>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Marca</td>
+            <td>Modelo o número de serie del Repuesto</td>
+            <td>Nombre</td>
+            <td>Valor bruto</td>
+            <td>Descripción</td>
+            <td>Stock Actual</td>
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% if mensaje %}
+    <div class="alert alert-success" role="alert">
+        Repuesto Eliminado exitosamente!
+      </div>
+    {% endif %}
+        {% if  Repuestos %}
+        <div class="alert alert-success" role="alert">
+            Repuestos encontrados exitosamente!
+        </div>
+        {% for repuesto in Repuestos %}
+        
+        <tr>
+            <td>  {{ repuesto.IDrepuesto }}          </td>
+            <td>    {{ repuesto.Marca }}          </td>
+            <td>   {{ repuesto.Modelo }}          </td>
+            <td>  {{ repuesto.Nombre }}             </td>
+            <td>$ {{ repuesto.Valor }}          </td>
+            <td>     {{ repuesto.Descripcion }}         </td>
+            <td>     {{ repuesto.Stock }}         </td>
+            <td>     <a class="btn btn-warning" href="{% url 'updaterepuestos' repuesto.IDrepuesto %}">Actualizar</a></td>
+            <td>    <a  class="btn btn-danger" href="{% url 'deleterepuestos' repuesto.IDrepuesto %}">Eliminar</a>    </td>
+        </tr>
+
+        {% endfor %}
+
+        {% else %}
+        <tr>
+            <td>  nn      </td>
+            <td>   nn     </td>
+            <td>   nn       </td>
+            <td> nn           </td>
+            <td>   nn         </td>
+            <td>   nn       </td>
+            <td>    nn      </td>
+        </tr>
+        <div class="alert alert-danger" role="alert">
+            Sin Registros!
+          </div>
+
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}

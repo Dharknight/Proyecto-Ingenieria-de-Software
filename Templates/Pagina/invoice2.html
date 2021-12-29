@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{%load static %}
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<style>
+    .img-invoice {
+        width: 200px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .head {
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    #invoice thead tr th {
+        text-align: left;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        padding-top: 4px;
+    }
+
+    #invoice thead tr {
+        margin-bottom: 2px;
+        padding-bottom: 0;
+    }
+
+    #invoice tbody tr {
+        padding-top: 3px;
+        text-align: left;
+    }
+
+    .text-center{
+        text-align: left;
+    }
+</style>
+<body>
+<img src="C:\Users\abelb\OneDrive\Documentos\githubsoftware\Taller-Flores\WebApp\Static\img\logo.jpeg" class="img-invoice">
+<p>
+    <b>BOLETA:</b> {{ boleta.IDpresupuesto }}<br>
+    <b>FECHA DE VENTA:</b> {{ boleta.Fecha }}<br>
+    <b>CLIENTE:</b> {{ boleta2.Nombrecliente|upper }}<br>
+    <b>DNI:</b> {{ boleta2.Rutcliente }}<br>
+</p>
+<table id="invoice">
+    <thead>
+        <tr>
+            <th style="width: 10%;">Repuesto</th>
+            <th style="width: 15%;">Diagnóstico</th>
+            <th style="width: 15%;">TOTAL</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-center">{{ boleta3.Nombre }}</td>
+            <td class="text-center">{{boleta.Diagnostico  }}</td>
+            <td style="text-align: left;">${{ boleta3.Valor }}</td>
+        </tr>
+    <tr style="border-top: 1px solid black; padding-top: 4px;">
+        <td colspan="4"><b>SUBTOTAL</b></td>
+        <td style="text-align: right">${{ boleta3.Valor }}</td>
+    </tr>
+    <tr style="padding-top: 0px;">
+        <td colspan="4"><b>TOTAL A PAGAR</b></td>
+        <td style="text-align: right">${{ boleta3.Valor }}</td>
+    </tr>
+    </tbody>
+</table>
+<table style="margin-top: 400px;">
+    <thead>
+    <tr>
+        <th>****GRACIAS POR SU COMPRA****</th>
+    </tr>
+    <tr>
+        <th>NO SE ACEPTAN CAMBIOS NI DEVOLUCIONES</th>
+    </tr>
+    </thead>
+</table>
+</body>
+</html>

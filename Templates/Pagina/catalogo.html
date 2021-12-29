@@ -1,0 +1,134 @@
+{% extends 'Base/base.html' %}
+
+{% block content %}
+{% load static %}
+<style>
+    body{
+        background-color:#000;
+        -webkit-background-size: cover;
+        background-size: cover; 
+        background-attachment: fixed;
+
+    }
+    .container-fluid .card{
+        overflow: hidden;
+        transition: all 0.25s;
+        width: auto;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+        margin: 20px;
+        text-align: center;
+
+    }
+    .container-fluid .card:hover{
+        transform: translateY(-15px);
+        box-shadow: 0 12px 16px rgba(0,0,0,0.2);
+    }
+    .card.text-white.bg-dark.mb-6 {
+        border-top-right-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+    }
+    .container-fluid .card img{
+        width: 350px;
+        height: 155px;
+
+    }
+   .card-body {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        padding: 1rem;
+        
+    }
+    .justify-content-center {
+        -webkit-box-pack: center!important;
+        -ms-flex-pack: center!important;
+        justify-content: center!;
+    }
+    .pagination .page-link {
+        position: relative;
+        float: left;
+        padding: 6px 12px;
+        margin-left: -1px;
+        line-height: 1.42857143;
+        color: #ffffff;
+        text-decoration: none;
+        background-color: #454545;
+        border: 1px solid #000;
+    }
+</style>
+
+<body>
+<div class="container-fluid">
+<div class="card-group">
+    <div class="col">
+        <div class="card">
+                <img src="{% static "img/alternador mitsubishi outlander 2 2.4 07-14 12v 120 amp 6pk 4.jpg" %}" class="card-img-top" alt="Card 1">
+                <div class="card-body">
+                    <h5 class="card-title">Alternador Mitsubishi Outlander 2 2.4 07-14 12v 120 amp 6pk 4</h5>
+                </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="https://www.ttp.cl/media/k2/items/cache/e6b24df417ad7ceb7a489b8a35382a8c_XL.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Amarras Plásticas</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_812664-MLC45685911569_042021-V.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Ampolleta 3 Luz de Freno</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_948644-MLC45363472011_032021-V.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Ampolleta 67 de Estacionamiento</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_705692-MLC42325374586_062020-V.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">AmpolletaF1 Contacto 93</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_819998-MLC46340202796_062021-O.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Ampolleta H1 Alta</h5>
+            </div>
+        </div>
+    </div>
+    
+</div>
+</div>
+    
+        <nav aria-label="Page navigation example" class="d-flex justify-content-center">
+            <ul class="pagination">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item disabled"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="{%url "catalogo2" %}">2</a></li>
+                <li class="page-item"><a class="page-link" href="{%url "catalogo3" %}">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="{%url "catalogo2"%}">Next</a>
+                </li>
+            </ul>
+        </nav>
+    
+</body>
+{% endblock %}

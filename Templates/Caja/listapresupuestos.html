@@ -1,0 +1,117 @@
+
+{% extends 'Base/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block header %}
+{% block navbar %}
+<style>
+  .table-bordered {
+    background-color: #fff;
+  }
+</style>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}">Repuestos y Accesorios Flores</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Presupuestos
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a href="{% url 'listapresupuestoscaja' %}">Lista Presupuestos</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <ul class="navbar-nav navbar-right">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ request.user }}</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a href="#">Ajustes de Cuenta</a></li>
+            <li><a href="{% url 'Logout' %}">Cerrar Sesión</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+      <div class="b-example-divider"></div>
+{% endblock %}
+{% endblock %}
+{% block content %}
+
+    <div class="col">
+        <div class="card card-body">
+
+            <form method="get">
+                {{FilterPresupuesto.form}}
+
+                <button class="btn btn-primary" type="submit">Buscar</button>
+            </form>
+            
+
+        </div>
+    </div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Reserva</td>
+            <td>Repuesto</td>
+            <td>Diegnóstico</td>
+            <td>Fecha</td>
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% if mensaje %}
+    <div class="alert alert-success" role="alert">
+        Presupuesto Eliminado exitosamente!
+      </div>
+    {% endif %}
+        {% if  Presupuestos %}
+        <div class="alert alert-success" role="alert">
+            Presupuestos encontrados exitosamente!
+        </div>
+
+        
+
+
+        {% for presupuesto in Presupuestos %}
+        
+        <tr>
+            <td>  {{ presupuesto.IDpresupuesto }}          </td>
+            <td>    {{ presupuesto.Reserva }}          </td>
+            <td>   {{   presupuesto.Repuesto }}          </td>
+            <td>  {{ presupuesto.Diagnostico }}             </td>
+            <td> {{presupuesto.Fecha  }}          </td>
+            <td>     <a class="btn btn-info" href="{%url "boleta" presupuesto.IDpresupuesto %}">Generar Boleta</a></td>
+            <td>     <a class="btn btn-info" href="{%url "factura" presupuesto.IDpresupuesto %}">Generar Factura</a></td>
+            
+            
+        </tr>
+
+        {% endfor %}
+
+        {% else %}
+        <tr>
+            <td>  nn      </td>
+            <td>   nn     </td>
+            <td>   nn       </td>
+            <td> nn           </td>
+            <td>   nn         </td>
+            
+        </tr>
+        <div class="alert alert-danger" role="alert">
+            Sin Registros!
+          </div>
+
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}

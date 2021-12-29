@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <title>Factura</title>
+  <link rel="stylesheet" href="factura.css" >
+ </head>
+ <body>
+    <h1>Factura</h1>
+    <table>
+        <thead>
+            <th>Reserva</th>
+            <th>Repuesto</th>
+            <th>Diagnóstico</th>
+            <th>Fecha</th>
+        </thead>
+        <tbody>
+            {%for presupuesto in facturas %}
+                <tr>
+                    <td>{{presupuesto.Reserva}}</td>
+                    <td>{{presupuesto.Repuesto}}</td>
+                    <td>{{presupuesto.Diagnostico}}</td>
+                    <td>{{presupuesto.Fecha}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+ </body>
+</html>

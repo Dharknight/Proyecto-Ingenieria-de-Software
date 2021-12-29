@@ -1,0 +1,99 @@
+{% extends 'Base/base.html' %}
+{% block content %}
+{%load static %}
+<style>
+    b {
+        color: #fff;
+    }
+    .h2, h2 {
+        font-size: 30px;
+        background-color: #000;
+    }
+    .container-fluid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: auto;
+    }
+    .card-body {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        padding: 1rem;
+        
+    }
+    .container-fluid .card{
+        overflow: hidden;
+        transition: all 0.25s;
+        width: auto;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+        margin: 50px;
+        text-align: center;
+    }
+    .container-fluid .card:hover{
+        transform: translateY(-15px);
+        box-shadow: 0 12px 16px rgba(0,0,0,0.2);
+    }
+    .card.text-white.bg-dark.mb-6 {
+        border-top-right-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+    }
+    .container .card .card-img-top{
+        width: 630px;
+        height: 530px;
+    }
+</style>
+
+<center><h2 class='titleF1' id='last'>SOMOS</h2></center>
+    <br class='both'/>
+    <br class='both'/>
+    <br class='both'/>
+        <b>Misión: Ofrecemos y distribuimos la mejor calidad en repuestos automotrices dentro de la zona, con un servicio de venta y post venta basado en superar las expectativas del cliente.</b><br><br><b>Visión: Ser la el taller mejor posicionado del mercado y con mejor reputación de la zona, contribuyendo al desarrollo de la comunidad, siendo respetuosos y justos con todos nuestros colaboradores, proveedores y clientes.</b><br><br><b>Historia: aknasnajsnalwsnsksklsknxlssjxsjx.
+        </br></b><br><br><br><br><br><br><br><br></div>
+        </div>
+<body>
+    <div class="container-fluid">
+        <div class="card-group">
+            <div class="card text-white bg-dark mb-6" style="max-width: 20rem;">
+                <img src="{% static "img/jefa mamá marce.jpg" %}" class="card-img-top" alt="Card 1">
+                <div class="card-body">
+                    <h5 class="card-title">Jefa de Operaciones</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>               
+                    <p class="card-text"></p>
+                </div>
+            </div>
+            <div class="card text-white bg-dark mb-6" style="max-width: 20rem;">
+                <img src="{% static "img/Marlen Cayunao Huenchunao 18.720.458-5.jpg" %}" class="card-img-top" alt="Card 1">
+                <div class="card-body">
+                    <h5 class="card-title">Secretaria</h5>
+                    <p class="card-text">Marlen Cayunao Huenchunao</p>
+                    <p class="card-text">18.720.458-5</p>
+                </div>
+            </div>
+            <div class="card text-white bg-dark mb-6" style="max-width: 20rem;">
+                <img src="{% static "img/Omar Flores Rodriguez 5.210.001-1.jpg" %}" class="card-img-top" alt="Card 1">
+                <div class="card-body">
+                    <h5 class="card-title">Mecánico</h5>
+                    <p class="card-text">Omar Flores Rodriguez</p>
+                    <p class="card-text">5.210.001-1</p>
+                </div>
+            </div>
+            <div class="card text-white bg-dark mb-6" style="max-width: 20rem;">
+                <img src="{% static "img\Secretaria Taller Flores Berenilda Soto Sierra 9.861.541-5.jpg" %}" class="card-img-top" alt="Card 1">
+                <div class="card-body">
+                    <h5 class="card-title">Mecánico</h5>
+                    <p class="card-text">Omar Flores Rodriguez</p>
+                    <p class="card-text">5.210.001-1</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br class='both' />
+    <br class='both' />
+    <div class='fooFinal'>
+</body>
+{%endblock%}

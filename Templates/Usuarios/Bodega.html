@@ -1,0 +1,57 @@
+{% extends 'Base/base.html' %}
+{% block header %}
+{% block navbar %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}">Repuestos y Accesorios Flores</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Bodega
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a href="{% url 'addrepuesto' %}">Ingresar nuevo Repuesto</a></li>
+              <li><a href="{% url 'listarepuestos' %}">Lista de Repuestos</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <ul class="navbar-nav navbar-right">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ request.user }}</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a href="#">Ajustes de Cuenta</a></li>
+            <li><a href="{% url 'Logout' %}">Cerrar Sesión</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+      <div class="b-example-divider"></div>
+{% endblock %}
+{% endblock %}
+
+{% block content %}
+{%include 'Usuarios/status.html' %}
+
+<body>
+<style>
+  .titulo{
+    text-align:center;
+    color: #fff;
+  }
+</style>
+<h1 class="titulo">Bienvenido {{request.user}}</h1>
+<div class="text-center">
+      <img src="https://i.pinimg.com/originals/c7/83/9f/c7839fbfdd4d9742916fb11587176200.jpg" class="rounded" alt="...">
+    </div>
+
+</body>
+
+{% endblock %}
+

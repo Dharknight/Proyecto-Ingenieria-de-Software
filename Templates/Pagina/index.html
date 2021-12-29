@@ -1,0 +1,117 @@
+
+{% extends 'Base/base.html' %}
+{% block content %}
+{% load static %}
+<style>
+    
+    body {
+        background-color: #000;
+        -webkit-background-size: cover;
+        background-size: cover; 
+        background-attachment: fixed;
+
+    }
+    .carousel {
+        margin-bottom: 6rem;
+    }
+    .carousel-item img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        height: 60rem;
+    }
+    /* Since positioning the image, we need to help out the caption */
+    .carousel-caption {
+        bottom: 3rem;
+        z-index: 10;
+    }
+  
+    /* Declare heights because of positioning of img element */
+    .carousel-item {
+        height: 50rem;
+
+    }
+    d-block w-100{
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        height: 32rem;
+    }
+    .container-fluid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: auto;
+    }
+    .card-body {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        padding: 1rem;
+        
+    }
+    .container-fluid .card{
+        overflow: hidden;
+        transition: all 0.25s;
+        width: auto;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+        margin: 50px;
+        text-align: center;
+
+    }
+    .container-fluid .card:hover{
+        transform: translateY(-15px);
+        box-shadow: 0 12px 16px rgba(0,0,0,0.2);
+    }
+    .card.text-white.bg-dark.mb-6 {
+        border-top-right-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+    }
+    .container .card .card-img-top{
+        width: 630px;
+        height: 530px;
+    }
+</style>
+<body>
+
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+            <img src="https://articulos.elclasificado.com/wp-content/uploads/2008/03/mecanico-arreglando-auto-1068x480.jpg" class="d-block w-100" alt="Carrusel 1">
+            <div class="carousel-caption d-none d-md-block">
+                <h3>Se realiza todo tipo de reparación mecánica</h3>
+
+            </div>
+            </div>
+            <div class="carousel-item">
+            <img src="https://www.endado.com/consejos/wp-content/uploads/2015/05/C%C3%B3mo-saber-qu%C3%A9-bater%C3%ADa-lleva-mi-coche.jpg" class="d-block w-100" alt="Carrusel 2">
+            </div>
+            <div class="carousel-item">
+            <img src="https://imagenes.20minutos.es/files/image_656_370/uploads/imagenes/2019/10/01/1077806.jpg" class="d-block w-100" alt="Carrusel 3">
+            </div>
+        </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+    </div>
+
+    <div class ="container-fluid">
+
+        <img src="{% static "img/marcasdeauto.png"%}"> 
+    
+    </div>
+    
+</body>
+
+{% endblock %}

@@ -1,0 +1,134 @@
+{% extends 'Base/base.html' %}
+
+{% block content %}
+{% load static %}
+<style>
+    body{
+        background-color:#000;
+        -webkit-background-size: cover;
+        background-size: cover; 
+        background-attachment: fixed;
+
+    }
+    .container-fluid .card{
+        overflow: hidden;
+        transition: all 0.25s;
+        width: auto;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+        margin: 20px;
+        text-align: center;
+
+    }
+    .container-fluid .card:hover{
+        transform: translateY(-15px);
+        box-shadow: 0 12px 16px rgba(0,0,0,0.2);
+    }
+    .card.text-white.bg-dark.mb-6 {
+        border-top-right-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+    }
+    .container-fluid .card img{
+        width: 350px;
+        height: 155px;
+
+    }
+   .card-body {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        padding: 1rem;
+        
+    }
+    .justify-content-center {
+        -webkit-box-pack: center!important;
+        -ms-flex-pack: center!important;
+        justify-content: center!;
+    }
+    .pagination .page-link {
+        position: relative;
+        float: left;
+        padding: 6px 12px;
+        margin-left: -1px;
+        line-height: 1.42857143;
+        color: #ffffff;
+        text-decoration: none;
+        background-color: #454545;
+        border: 1px solid #000;
+    }
+</style>
+
+<body>
+<div class="container-fluid">
+<div class="card-group">
+    <div class="col">
+        <div class="card">
+                <img src="{% static "img/fusibles.jpg" %}" class="card-img-top" alt="Card 1">
+                <div class="card-body">
+                    <h5 class="card-title">Fusibles Max 32v</h5>
+                </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="{%static "img/Limpiador de Carburadores.jpg"%}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Limpiador de Carburadores</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="{%static "img/liquido de frenos.jpg"%}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Liquido de Frenos</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="{%static "img/rodamientos.jpg"%}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Rodamientos</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="{%static "img/bujias.jpg"%}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Bujias</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="{%static "img/chapa de contacto.jpg"%}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Chapa de Contacto Invicta 150</h5>
+            </div>
+        </div>
+    </div>
+    
+</div>
+</div>
+    
+        <nav aria-label="Page navigation example" class="d-flex justify-content-center">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" href="{%url "catalogo2" %}" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="{%url "catalogo"%}">1</a></li>
+                <li class="page-item"><a class="page-link" href="{%url "catalogo2"%}">2</a></li>
+                <li class="page-item disabled"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link disabled" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+    
+</body>
+{% endblock %}

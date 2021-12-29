@@ -1,0 +1,141 @@
+{% extends 'Base/base.html' %}
+
+{% block content %}
+{% load static %}
+<style>
+    body{
+        background-color:#000;
+        -webkit-background-size: cover;
+        background-size: cover; 
+        background-attachment: fixed;
+
+    }
+    .container-fluid .card{
+        overflow: hidden;
+        transition: all 0.25s;
+        width: auto;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+        margin: 20px;
+        text-align: center;
+
+    }
+    .container-fluid .card:hover{
+        transform: translateY(-15px);
+        box-shadow: 0 12px 16px rgba(0,0,0,0.2);
+    }
+    .card.text-white.bg-dark.mb-6 {
+        border-top-right-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+    }
+    .container-fluid .card img{
+        width: 350px;
+        height: 155px;
+
+    }
+   .card-body {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        padding: 1rem;
+        
+    }
+    .justify-content-center {
+        -webkit-box-pack: center!important;
+        -ms-flex-pack: center!important;
+        justify-content: center!;
+    }
+    .pagination .page-link {
+        position: relative;
+        float: left;
+        padding: 6px 12px;
+        margin-left: -1px;
+        line-height: 1.42857143;
+        color: #ffffff;
+        text-decoration: none;
+        background-color: #454545;
+        border: 1px solid #000;
+    }
+    .container-fluid .card img {
+        width: 350px;
+        height: 155px;
+        padding-left: 33px;
+        margin-top: 3px;
+        /* background-color: #fff; */
+    }
+</style>
+
+<body>
+<div class="container-fluid">
+<div class="card-group">
+    <div class="col">
+        <div class="card">
+                <img src="{% static "img/anillo colector Audi J0959653.jpg" %}" class="card-img-top" alt="Card 1">
+                <div class="card-body">
+                    <h5 class="card-title">Anillo Colector Audi J0959653</h5>
+                </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="{%static "img/Bendix Motor Partida 9.jpg"%}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Bendix Motor</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="{%static "img/bujes 2.jpg"%}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Bujes</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="{%static "img/plumillas.jpeg"%}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Diodos de Excitación</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="{%static "img/estator.jpg"%}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Estator</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="{%static "img/filtro de bencina Nissan V16.jpg"%}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Filtro de Bencina Nissan V16</h5>
+            </div>
+        </div>
+    </div>
+    
+</div>
+</div>
+    
+        <nav aria-label="Page navigation example" class="d-flex justify-content-center">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" href="{%url "catalogo" %}" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="{%url "catalogo" %}">1</a></li>
+                <li class="page-item disabled"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="{%url "catalogo3" %}">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="{%url "catalogo3" %}">Next</a>
+                </li>
+            </ul>
+        </nav>
+    
+</body>
+{% endblock %}
